@@ -1,23 +1,19 @@
-<?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$db = "mwf9to12";
+<?php  
 
-$conn = new PDO("mysql:host={$servername};dbname={$db}",$username,$password);
+$servername= "localhost";
+$username= "root";
+$password= "";
+$db= "mwf9to12";
 
-try
-{
-	// echo "connection successful";
+$conn = mysqli_connect($servername,$username,$password,$db);
+
+if ($conn) {
+	// echo "<h1>connection successful</h1>";
 }
-catch(PDOException $e)
-{
-	echo $e-> getMessage();
+else{
+	// echo "<h1>not connected</h1>";
+
+	die("not connected due to". mysql_connect_error());
 }
 
-
-
-
-
-
-  ?>
+?>
